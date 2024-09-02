@@ -92,10 +92,13 @@ public class ChannelTalkFlutterPlugin: NSObject, FlutterPlugin {
       profile.set(avatarUrl: avatarUrl)
     }
     
+    let positionValue = (argMaps["channelButtonOption"] as? [String: Any])?["position"] as? String
+    let position: ChannelButtonPosition = (positionValue == "left") ? .left : .right
+    
     let buttonOption = ChannelButtonOption.init(
-      position: .left,
-      xMargin: 16,
-      yMargin: 75
+      position: position,
+      xMargin: (argMaps["channelButtonOption"] as? [String: Any])?["xMargin"] as? Float ?? 16,
+      yMargin: (argMaps["channelButtonOption"] as? [String: Any])?["yMargin"] as? Float ?? 75
     )
 
     let memberHash = argMaps["memberHash"] as? String
