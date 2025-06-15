@@ -1,3 +1,6 @@
+
+
+
 # channel_talk_flutter
 Flutter wrapper for Channel Talk Android and iOS projects.(Unofficial)<br><br>
 \*******************************************************************************************************
@@ -20,7 +23,7 @@ TO-BE
 \*******************************************************************************************************
 
 
-## Usage
+## ⚡ Usage
 ```dart
 import 'package:channel_talk_flutter/channel_talk_flutter.dart';
 
@@ -114,7 +117,7 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
   # Add below line
-  pod 'ChannelIOSDK', podspec: 'https://mobile-static.channel.io/ios/11.7.3/xcframework.podspec'
+  pod 'ChannelIOSDK', podspec: 'https://mobile-static.channel.io/ios/12.6.0/xcframework.podspec'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
@@ -199,7 +202,7 @@ void main() async {
 ```
 
 
-### Supported API
+### 🔧 Supported API
 
 <table>
     <thead>
@@ -644,13 +647,13 @@ It is valid when creating a new user. The language of the user that already exis
             <td>These are the tags to be removed. Null, empty strings, or lists containing them are not allowed.</td>
             <td>Mobile, Web</td>
         </tr>
-        <!-- openSupportBot -->
+        <!-- openWorkflow -->
         <tr>
-            <td rowspan=2>openSupportBot</td>
-            <td rowspan=2>Opens User chat to run a specific Support bot.</td>
-            <td>supportBotId*</td>
+            <td rowspan=2>openWorkflow</td>
+            <td rowspan=2>Opens a user chat and starts the specified workflow.</td>
+            <td>workflowId</td>
             <td>String?</td>
-            <td>This is the support bot's ID. If supportBotId is invalid or nil, the chat room is closed.</td>
+            <td>The ID of workflow to start with. An error page will be shown if such workflow does not exist.</td>
             <td rowspan=2>Mobile, Web</td>
         </tr>
         <tr>
@@ -667,5 +670,29 @@ It is valid when creating a new user. The language of the user that already exis
             <td>If specified as .light or .dark, it locks the theme to the respective mode. If specified as .system, it follows the device's system theme.</td>
             <td>Mobile, Web</td>
         </tr>
+        <!-- hidePopup -->
+        <tr>
+            <td>hidePopup</td>
+            <td>Hides the Channel popup on the global screen.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Mobile</td>
+        </tr>
     </tbody>
 </table>
+
+## 🤗 Contributing
+
+Contributions are welcome! Feel free to [open an issue](https://github.com/turlvo/channel_talk_flutter/issues/new) or submit a [pull request](https://github.com/turlvo/channel_talk_flutter/compare) if you have a way to improve this project.
+
+Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
+
+
+## 🙋‍♂️ Support
+
+💙 If you like this project, give it a ⭐ and share it with friends!
+
+<a href="https://www.buymeacoffee.com/turlvo" target="_blank" title="buymeacoffee">
+  <img src="https://iili.io/JoQ1HUQ.md.png"  alt="buymeacoffee-violet-badge" style="width: 130px;">
+</a>

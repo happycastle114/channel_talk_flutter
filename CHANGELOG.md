@@ -1,3 +1,22 @@
+## 4.0.0
+- Require iOS 15 and above
+- Upgrade iOS's ChannelIOSdk version to 12.6.0
+- Upgrade Android's ChannelIOSdk version to 12.6.0
+
+## 3.3.0
+- Fixed 'App not launching when tapping on Push Notification' in Android
+- Upgrade iOS's ChannelIOSdk version to 12.2.1
+- Upgrade Android's ChannelIOSdk version to 12.3.1
+  
+## 3.2.1
+- Update compileSdkVersion to Resolve Android Build Error after Flutter 3.24 Upgrade
+
+## 3.2.0
+- Upgrade iOS's ChannelIOSdk version to 12.1.0
+- Upgrade Android's ChannelIOSdk version to 12.2.0
+- Added `hidePopup` API
+- BREAKING: Removed `openSupportBot` and added `openWorkflow`
+
 ## 3.1.3
 - BREAKING: Updated README for Android push notification guide
 - Upgrade Android's ChannelIOSdk version from 11.6.1 to 11.6.2

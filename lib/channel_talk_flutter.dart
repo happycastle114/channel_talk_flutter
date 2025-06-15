@@ -277,13 +277,11 @@ class ChannelTalk {
     return ChannelTalkFlutterPlatform.instance.removeTags(tags);
   }
 
-  static Future<bool?> openSupportBot({
-    required String supportBotId,
-    String? message,
+  static Future<bool?> openWorkflow({
+    String? workflowId,
   }) {
-    return ChannelTalkFlutterPlatform.instance.openSupportBot(
-      supportBotId: supportBotId,
-      message: message,
+    return ChannelTalkFlutterPlatform.instance.openWorkflow(
+      workflowId: workflowId,
     );
   }
 
@@ -291,5 +289,9 @@ class ChannelTalk {
     required Appearance appearance,
   }) {
     return ChannelTalkFlutterPlatform.instance.setAppearance(appearance);
+  }
+
+  static Future<bool?> hidePopup() {
+    return ChannelTalkFlutterPlatform.instance.hidePopup();
   }
 }

@@ -34,7 +34,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** ChannelTalkFlutterPlugin */
 public class ChannelTalkFlutterPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -112,10 +111,12 @@ public class ChannelTalkFlutterPlugin implements FlutterPlugin, MethodCallHandle
       addTags(call, result);
     } else if (call.method.equals("removeTags")) {
       removeTags(call, result);
-    } else if (call.method.equals("openSupportBot")) {
-      openSupportBot(call, result);
+    } else if (call.method.equals("openWorkflow")) {
+      openWorkflow(call, result);
     } else if (call.method.equals("setAppearance")) {
       setAppearance(call, result);
+    } else if (call.method.equals("hidePopup")) {
+      hidePopup(call, result);
     } else {
       result.notImplemented();
     }
@@ -488,15 +489,14 @@ public class ChannelTalkFlutterPlugin implements FlutterPlugin, MethodCallHandle
     });
   }
 
-  public void openSupportBot(@NonNull MethodCall call, @NonNull final Result result) {
+  public void openWorkflow(@NonNull MethodCall call, @NonNull final Result result) {
     if (!ChannelIO.isBooted()) {
       result.error("UNAVAILABLE", "Channel Talk is not booted", null);
     }
 
-    String openSupportBot = call.argument("supportBotId");
-    String message = call.argument("message");
+    String workflowId = call.argument("workflowId");
 
-    ChannelIO.openSupportBot(this.activity, openSupportBot, message);
+    ChannelIO.openWorkflow(this.activity, workflowId);
     result.success(true);
   }
 
@@ -506,6 +506,11 @@ public class ChannelTalkFlutterPlugin implements FlutterPlugin, MethodCallHandle
     }
 
     ChannelIO.setAppearance(getAppearance(call.argument("appearance")));
+    result.success(true);
+  }
+
+  public void hidePopup(@NonNull MethodCall call, @NonNull final Result result) {
+    ChannelIO.hidePopup();
     result.success(true);
   }
 
